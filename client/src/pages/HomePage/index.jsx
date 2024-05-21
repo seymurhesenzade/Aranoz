@@ -1,4 +1,7 @@
 import "../HomePage/index.scss";
+import { Card } from "antd";
+const { Meta } = Card;
+import { Col, Divider, Row } from "antd";
 const HomePage = () => {
   return (
     <>
@@ -31,7 +34,7 @@ const HomePage = () => {
                 <img
                   style={{ height: "600px" }}
                   src="https://divanlar.com/wp-content/uploads/2022/09/55.jpg"
-                  class="d-block w-100"
+                  class="d-block w-cover"
                   alt="..."
                 />
               </div>
@@ -112,8 +115,78 @@ const HomePage = () => {
         </div>
       </section>
       <section id="awesome">
-        
 
+        <h1>Awesome</h1>
+        <div className="card">
+          <Row style={{display:"flex", flexWrap:"wrap"}}>
+            <Col lassName="gutter-row" span={6} >
+            <Card
+              hoverable
+              style={{
+                marginTop: 100,
+                marginLeft: 390,
+                width: 240,
+              }}
+              cover={
+                <img
+                  alt="example"
+                  src="https://i.guim.co.uk/img/media/cffe55802cc18d103c8d0d57344125b259d422d2/0_169_4293_2576/master/4293.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=543d1e25a43f08af38bbd71956299d80"
+                />
+              }
+            >
+              <Meta
+                title="Andrew Tate"
+                description="www.instagram.com"
+              />
+            </Card>
+            </Col>
+
+            <Col lassName="gutter-row" span={6}>
+            <Card
+              hoverable
+              style={{
+                marginTop: 100,
+                marginLeft: 390,
+                width: 240,
+              }}
+              cover={
+                <img
+                  alt="example"
+                  src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-24360,resizemode-75,msid-94421929/news/international/us/who-is-andrew-tate-one-of-the-most-googled-person-in-the-world.jpg"
+                />
+              }
+            >
+              <Meta
+                title="Andrew Tate"
+                description="www.instagram.com"
+              />
+            </Card>
+            </Col>
+
+            <Col lassName="gutter-row" span={6}>
+            <Card
+              hoverable
+              style={{
+                marginTop: 100,
+                marginLeft: 390,
+                width: 240,
+              }}
+              cover={
+                <img
+                  alt="example"
+                  src="https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe01128c2-5d6c-11ee-88d6-eacc4268cc5d.jpg?crop=2773%2C1560%2C9%2C22&resize=1200"
+                />
+              }
+            >
+              <Meta
+                title="Andrew Tate"
+                description="www.instagram.com"
+              />
+            </Card>
+            </Col>
+
+          </Row>
+        </div>
       </section>
     </>
   );

@@ -27,8 +27,7 @@ const Header = () => {
   ];
   return (
     <>
-      <header>
-        <div className="container">
+      <header id="navbar">
           <div className="navbar">
             <img src="https://preview.colorlib.com/theme/aranoz/img/logo.png" />
 
@@ -117,7 +116,6 @@ const Header = () => {
               <MdOutlineShoppingCart />
             </div>
           </div>
-        </div>
       </header>
     </>
   );

@@ -16,6 +16,7 @@ const AranozSchema = new Schema({
 });
 
 const AranozModel = mongoose.model("Aranoz", AranozSchema);
+
 app.get("/products", async (req, res) => {
   try {
     const aranoz = await AranozModel.find({});
@@ -51,11 +52,20 @@ app.delete("/products/:id", async (req, res) => {
     } else {
       res.status(404).send({ message: "Not data" });
     }
-  } catch (error) {
+  } catch  (error) {
     res.status(500).send({ message: error.message });
   }
 });
-app.post("/", async (req, res) => {});
+app.post("/products", async (req, res) => {
+try {
+  const NewProduct = AranozModel({...req.body});
+  await NewProduct.save();
+  res.status(200).send({message: "success" })
+
+} catch (error) {
+  res.status(500).send({message: error.message})
+}
+});
 
 mongoose.connect(DB_URL).then(() => {
   console.log("Connected!");
@@ -63,3 +73,12 @@ mongoose.connect(DB_URL).then(() => {
     console.log(`Link: http://localhost:${port}`);
   });
 });
+
+
+// try {
+//   const newProduct = new AranozModel({...req.body});
+//   await newProduct.save();
+//   res.status(200).send({message: "Succesfully", data: newProduct})
+//     } catch (error) {
+//       res.status(500).send({message: error.message})
+//     }
